@@ -1,0 +1,24 @@
+{
+  "public": false,
+  "name": "melior",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/betterhen/melior.git"
+  },
+  "author": "betterhen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/betterhen/melior/issues"
+  },
+  "homepage": "https://gitlab.com/betterhen/melior#README",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "webpack": "^1.13.3"
+  }
+}
