@@ -7,4 +7,4 @@ gulp.task('serve-all', ['env'], done => {
   } else {
     runSequence('server-dev', 'electron-dev', done)
   }
-}
+})
