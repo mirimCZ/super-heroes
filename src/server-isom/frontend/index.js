@@ -6,7 +6,7 @@ import main from './main'
 const app = express()
 
 app.use(compression())
-app.use('/assets', express.static('build', { maxAge: '200d' }))
+app.use('/assets', express.static('target/web', { maxAge: '200d' }))
 app.get('*', main)
 
 export default app
