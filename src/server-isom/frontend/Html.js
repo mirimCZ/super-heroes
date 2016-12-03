@@ -5,7 +5,6 @@ import React from 'react'
 type Props = {
   appCssFilename: string,
   bodyHtml: string,
-  googleAnalyticsId: string,
   helmet: Object,
   isProduction: boolean,
 }
@@ -36,7 +35,6 @@ const Html = ({
 Html.propTypes = {
   appCssFilename: React.PropTypes.string,
   bodyHtml: React.PropTypes.string.isRequired,
-  googleAnalyticsId: React.PropTypes.string.isRequired,
   helmet: React.PropTypes.object.isRequired,
   isProduction: React.PropTypes.bool.isRequired,
 }
