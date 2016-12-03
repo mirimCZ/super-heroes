@@ -11,7 +11,7 @@ import WebpackIsomorphicToolsPlugin from 'webpack-isomorphic-tools/plugin'
 
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(assets)
 
-const defConfig = options => {
+const makeConfig = options => {
   const {
     isDevelopment,
   } = options
@@ -123,7 +123,7 @@ const defConfig = options => {
           }),
           webpackIsomorphicToolsPlugin,
           new CopyWebpackPlugin([{
-            from: './src/common/app/favicons/',
+            from: './src/assets/favicons/',
             to: 'favicons',
           }], {
             ignore: ['original/**'],
@@ -146,4 +146,4 @@ const defConfig = options => {
   return config
 }
 
-export default defConfig
+export default makeConfig

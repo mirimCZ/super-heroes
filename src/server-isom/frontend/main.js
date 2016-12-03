@@ -26,8 +26,7 @@ const createStore = (req) => configureStore({
   initialState: {
     ...initialState,
     intl: initialState.intl
-      .set('currentLocale', req.acceptsLanguages(config.locales) || config.defaultLocale)
-      .set('initialNow', Date.now()),
+      .set('currentLocale', req.acceptsLanguages(config.locales) || config.defaultLocale),
   },
 })
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import makeWebpackConfig from '../config-dev'
+import makeWebpackConfig from '../config-web'
 import webpack from 'webpack'
 import webpackDev from 'webpack-dev-middleware'
 import webpackHot from 'webpack-hot-middleware'

@@ -26,7 +26,7 @@ const configureMiddleware = (initialState, platformDeps, platformMiddleware) => 
   if (enableLogger) {
     const logger = createLoggerMiddleware({
       collapsed: true,
-      stateTransformer: state => state.toJS(),
+      stateTransformer: state => JSON.parse(JSON.stringify(state)),
     })
     middleware.push(logger)
   }

@@ -4,7 +4,7 @@ import runSequence from 'run-sequence'
 
 gulp.task('serve-all', ['env'], done => {
   if (args.production) {
-    // NOTE: don´t build electron in production mode - only API server
+    runSequence('server-isom', 'server-api', done)
   } else {
     runSequence('server-hot', 'server-isom', 'server-api', done)
   }
