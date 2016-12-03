@@ -5,3 +5,10 @@
 # Install
 - npm install
 - npm start
+
+# Big thanks to autors of este.js
+Daniel Steigerwald
+Mike Grabowski
+and the community
+
+Check este out! It´s great: https://github.com/este/este

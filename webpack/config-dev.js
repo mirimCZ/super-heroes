@@ -1,5 +1,5 @@
 /* @flow weak */
-import '../src/server/config'
+import '../src/server-isom/config'
 import assets from './assets'
 import autoprefixer from 'autoprefixer'
 import constants from './constants'

@@ -1,7 +1,6 @@
-import args from './helpers/args';
-import gulp from 'gulp';
-import { execSync } from 'child_process';
+import args from './helpers/args'
+import gulp from 'gulp'
 
 gulp.task('env', () => {
-  process.env.NODE_ENV = args.production ? 'production' : 'development';
-});
+  process.env.NODE_ENV = args.production ? 'production' : 'development'
+})

@@ -1,20 +1,7 @@
-import express from 'express'
-import makeWebpackConfig from '../config-dev'
-import webpack from 'webpack'
-import webpackDev from 'webpack-dev-middleware'
-import webpackHot from 'webpack-hot-middleware'
+if (process.env.NODE_ENV === 'production') {
+  throw new Error('Do not start webpack hot reload server in production environment. You are likely using wrong npm start script')
+}
 
-const app = express()
+require('babel-register')
 
-const webpackConfig = makeWebpackConfig({ isDevelopment: true })
-const compiler = webpack(webpackConfig)
-
-app.use(webpackDev(compiler, {
-  headers: { 'Access-Control-Allow-Origin': '*' },
-  noInfo: true,
-  publicPath: webpackConfig.output.publicPath,
-}))
-
-app.use(webpackHot(compiler))
-
-app.listen(webpackConfig.hotPort)
+require('./main')
