@@ -1,14 +1,51 @@
 /* @flow */
+import Helmet from 'react-helmet'
 import R from 'ramda'
 import React from 'react'
+import favicon from '../../components/app/favicon'
 import start from '../../components/app/start'
 import type { State } from '../../lib/types'
+import { Flex, Box } from '../../components/wrappers'
+import { Match, Miss } from 'react-router'
 import { connect } from 'react-redux'
 
-const App = () => (
-  <div>
-    <h1>Fuckin testy!</h1>
-  </div>
+import NotFoundPage from '../not-found/NotFoundPage'
+import HomePage from '../home/HomePage'
+
+const bootstrap4Metas: any = [
+  { charset: 'utf-8' },
+  {
+    name: 'viewport',
+    content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+  },
+  {
+    'http-equiv': 'x-ua-compatible',
+    content: 'ie=edge',
+  },
+]
+// <Match exactly pattern="/" component={HomePage} />
+const App = ({ currentLocale }) => (
+  <Flex>
+    <Helmet
+      htmlAttributes={{ lang: currentLocale }}
+      meta={[
+        ...bootstrap4Metas,
+        {
+          name: 'description',
+          content: 'Melior Online - MMO RPG game written in JavaScript',
+        },
+        ...favicon.meta,
+      ]}
+      link={[
+        ...favicon.link,
+      ]}
+    />
+
+    <Box>
+
+      <Miss component={NotFoundPage} />
+    </Box>
+  </Flex>
 )
 
 App.propTypes = {
