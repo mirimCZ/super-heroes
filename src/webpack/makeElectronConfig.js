@@ -1,4 +1,3 @@
-import CopyWebpackPlugin from 'copy-webpack-plugin'
 import constants from '../constants'
 import makeBaseConfig from './config-base'
 import merge from 'webpack-merge'
@@ -11,10 +10,6 @@ const makeElectronConfig = options => {
       app: path.join(constants.SRC_DIR, 'electron/index.js'),
     },
     plugins: [
-      new CopyWebpackPlugin([{
-        from: './src/electron/index.html',
-        to: 'index.html',
-      }]),
     ],
     output: {
       path: `${constants.BUILD_DIR_ELECTRON}`,

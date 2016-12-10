@@ -1,3 +1,4 @@
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import constants from '../constants'
 import makeBaseConfig from './config-base'
 import merge from 'webpack-merge'
@@ -19,6 +20,7 @@ const makeBrowserConfig = (options) => {
         path.join(constants.SRC_DIR, 'app/electron/index.js'),
       ],
     },
+    target: 'electron-main',
     output: isDevelopment ? {
       path: `${constants.BUILD_DIR_ELECTRON}`,
       filename: '[name].js',
@@ -28,7 +30,7 @@ const makeBrowserConfig = (options) => {
       path: `${constants.BUILD_DIR_ELECTRON}`,
       filename: '[name]-[hash].js',
       chunkFilename: '[name]-[chunkhash].js',
-      publicPath: '/assets/',
+      publicPath: '',
     },
     plugins: (() => {
       const plugins = [
@@ -37,6 +39,12 @@ const makeBrowserConfig = (options) => {
             IS_ELECTRON: true,
             NODE_ENV: JSON.stringify(isDevelopment ? 'development' : 'production'),
           },
+        }),
+        new HtmlWebpackPlugin({
+          title: 'Melior Electron',
+          filename: 'index.html',
+          path: path.join(constants.BUILD_DIR_ELECTRON),
+          template: path.join(constants.SRC_DIR, 'electron/index.html'),
         }),
       ]
       return plugins
@@ -55,66 +63,3 @@ const makeBrowserConfig = (options) => {
 }
 
 export default makeBrowserConfig
-
-/*
-import constants from './constants'
-import path from 'path'
-
-const makeConfig = options => {
-  const {
-    isDevelopment,
-  } = options
-
-  const config = {
-    cache: isDevelopment,
-    debug: isDevelopment,
-    devtool: isDevelopment ? 'eval' : '',
-    entry: {
-      app: path.join(constants.SRC_DIR, 'electron/index.js'),
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.js$/,
-          exclude: constants.NODE_MODULES_DIR,
-          loader: 'babel',
-          query: {
-            cacheDirectory: true,
-            presets: ['es2015', 'es2017', 'react', 'stage-1'],
-            plugins: [
-              ['transform-runtime', {
-                helpers: false,
-                polyfill: false,
-                regenerator: false,
-              }],
-            ],
-            env: {
-              production: {
-                plugins: [
-                  'transform-react-constant-elements',
-                ],
-              },
-            },
-          },
-        },
-      ],
-    },
-
-    output: {
-      path: `${constants.BUILD_DIR}/electron`,
-      filename: 'main.js',
-
-      // https://github.com/webpack/webpack/issues/1114
-      libraryTarget: 'commonjs2',
-    },
-    target: 'electron-main',
-    node: {
-      __dirname: false,
-      __filename: false,
-    },
-  }
-
-  return config
-}
-
-*/
