@@ -85,12 +85,12 @@ const makeConfig = options => {
       ],
     },
     output: isDevelopment ? {
-      path: constants.BUILD_DIR,
+      path: `${constants.BUILD_DIR}/web`,
       filename: '[name].js',
       chunkFilename: '[name]-[chunkhash].js',
       publicPath: `http://localhost:${constants.HOT_RELOAD_PORT}/build/`,
     } : {
-      path: constants.BUILD_DIR,
+      path: `${constants.BUILD_DIR}/web`,
       filename: '[name]-[hash].js',
       chunkFilename: '[name]-[chunkhash].js',
       publicPath: '/assets/',

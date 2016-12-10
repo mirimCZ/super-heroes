@@ -7,4 +7,4 @@ yarn.lock
 # App
 #
 target/
-webpack-assets.js
+./webpack-assets.json

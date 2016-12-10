@@ -15,7 +15,7 @@ export default {
       parser: plugin.url_loader_parser,
     },
     styles: {
-      extensions: ['css', 'less', 'sass', 'scss', 'styl'],
+      extensions: ['css', 'sass', 'scss'],
       filter(module, regex, options, log) {
         return options.development
           ? plugin.style_loader_filter(module, regex, options, log)

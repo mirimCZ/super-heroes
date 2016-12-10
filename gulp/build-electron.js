@@ -1,7 +1,4 @@
 import gulp from 'gulp'
+import webpackBuild from '../webpack/build-elec'
 
-gulp.task('build-electron', (done) => {
-  // TODO: start API server
-  console.log('build electron client')
-  done()
-})
+gulp.task('build-electron', ['env'], done => webpackBuild(done))
