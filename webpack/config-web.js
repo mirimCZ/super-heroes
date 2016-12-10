@@ -11,10 +11,28 @@ import WebpackIsomorphicToolsPlugin from 'webpack-isomorphic-tools/plugin'
 
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(assets)
 
+const loaders = {
+  css: '',
+  scss: '!sass-loader',
+  sass: '!sass-loader?indentedSyntax',
+}
+
 const makeConfig = options => {
   const {
     isDevelopment,
   } = options
+
+  const stylesLoaders = Object.keys(loaders).map((ext) => {
+    const prefix = 'css-loader!postcss-loader'
+    const extLoaders = prefix + loaders[ext]
+    const loader = isDevelopment
+      ? `style-loader!${extLoaders}`
+      : ExtractTextPlugin.extract('style-loader', extLoaders)
+    return {
+      loader,
+      test: new RegExp(`\\.(${ext})$`),
+    }
+  })
 
   const config = {
     cache: isDevelopment,
@@ -30,13 +48,6 @@ const makeConfig = options => {
       ],
     },
     module: {
-      /*
-      TODO: if problem with localforage remove comments
-      noParse: [
-        // https://github.com/localForage/localForage/issues/617
-        new RegExp('localforage.js'),
-      ],
-      */
       loaders: [
         {
           loader: 'url-loader?limit=10000',
@@ -70,12 +81,7 @@ const makeConfig = options => {
             },
           },
         },
-        {
-          test: /\.scss$/,
-          loader: isDevelopment
-            ? 'style-loader!css-loader!postcss-loader!sass-loader'
-            : ExtractTextPlugin.extract('style-loader', '!css-loader!postcss-loader!sass-loader'),
-        },
+        ...stylesLoaders,
       ],
     },
     output: isDevelopment ? {

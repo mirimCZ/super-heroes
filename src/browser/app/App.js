@@ -1,4 +1,5 @@
 /* @flow */
+import './App.scss'
 import Helmet from 'react-helmet'
 import R from 'ramda'
 import React from 'react'

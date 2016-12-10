@@ -1,9 +1,9 @@
 /* @flow */
-// import './Page.scss'
+import './Page.scss'
 import React from 'react'
 
 const Page = (props: Object) => (
-  <div {...props} className="PageWrapper" />
+  <div className="PageWrapper" {...props} />
 )
 
 export default Page
