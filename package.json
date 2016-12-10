@@ -32,6 +32,7 @@
     "babel-register": "^6.18.0",
     "babel-runtime": "^6.18.0",
     "bluebird": "^3.4.6",
+    "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",

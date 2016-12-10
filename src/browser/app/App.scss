@@ -1,6 +1,12 @@
 @import "../../../node_modules/normalize.css/normalize.css";
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
 
+$colorPrimary: #3F51B5;
+$colorSecondary: #607D8B;
+
+$bodyBackground: #3F51B5;
+$bodyColor: #FFF;
+
 html,
 body {
   height: 100%;
@@ -10,4 +16,7 @@ body {
   font-family: 'Source Sans Pro', 'sans-serif';
   font-size: 16px;
   line-height: 1.5;
+
+  background-color: $bodyBackground;
+  color: $bodyColor;
 }

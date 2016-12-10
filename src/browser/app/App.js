@@ -24,7 +24,7 @@ const bootstrap4Metas: any = [
     content: 'ie=edge',
   },
 ]
-// <Match exactly pattern="/" component={HomePage} />
+
 const App = ({ currentLocale }) => (
   <Flex>
     <Helmet
@@ -42,8 +42,8 @@ const App = ({ currentLocale }) => (
       ]}
     />
 
-    <Box>
-
+    <Box style={{ flex: 1 }}>
+      <Match exactly pattern="/" component={HomePage} />
       <Miss component={NotFoundPage} />
     </Box>
   </Flex>
