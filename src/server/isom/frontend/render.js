@@ -1,4 +1,4 @@
-import App from '../../browser/app/App'
+import App from '../../../app/browser/app/App'
 import Helmet from 'react-helmet'
 import Html from './Html'
 import React from 'react'
@@ -7,7 +7,7 @@ import serialize from 'serialize-javascript'
 import { Provider as Redux } from 'react-redux'
 import { ServerRouter } from 'react-router'
 import { renderToString, renderToStaticMarkup } from 'react-dom/server'
-import { toJSON } from '../../lib/transit'
+import { toJSON } from '../../../lib/transit'
 
 export function renderBody(store, context, location, fetchPromises) {
   const markup = renderToString(

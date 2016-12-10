@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Root from './app/Root'
-import { fromJSON } from '../lib/transit'
+import { fromJSON } from '../../lib/transit'
 import configureStore from '../redux/_configure/store'
 
 // eslint-disable-next-line no-underscore-dangle, no-undef

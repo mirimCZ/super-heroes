@@ -1,4 +1,4 @@
-import { Action } from '../../lib/types'
+import { Action } from '../../../lib/types'
 
 export const appStart = (): Action => ({
   type: 'APP_START',

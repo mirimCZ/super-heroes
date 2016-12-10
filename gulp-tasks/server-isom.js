@@ -25,6 +25,6 @@ gulp.task('server-isom', done => {
     nodemonPath,
     '--ignore',
     'webpack-assets.json',
-    path.normalize('src/server-isom'),
+    path.normalize('src/server/isom'),
   )(done)
 })

@@ -4,7 +4,7 @@
 
 const onWindowIntl = () => {
   require('babel-polyfill')
-  window.Promise = require('../lib/bluebird')
+  window.Promise = require('../../lib/bluebird')
 
   const { addLocaleData } = require('react-intl')
   const locales = [

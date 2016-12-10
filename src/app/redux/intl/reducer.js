@@ -1,6 +1,6 @@
 /* @flow weak */
 import * as actions from './actions'
-import { Record } from '../../lib/transit'
+import { Record } from '../../../lib/transit'
 
 const State = Record({
   currentLocale: null,

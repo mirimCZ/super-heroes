@@ -4,7 +4,7 @@ import { injectIntl, intlShape } from 'react-intl'
 import { Page } from '../../components/wrappers'
 import { Title } from '../../components/atoms'
 import { PageHeader } from '../../components/molecules'
-import messages from '../../l18n/pages/not-found'
+import messages from '../../../l18n/pages/not-found'
 
 const NotFoundPage = ({ intl }) => (
   <Page>

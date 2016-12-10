@@ -1,5 +1,5 @@
 /* @flow weak */
-import { Record } from '../../lib/transit'
+import { Record } from '../../../lib/transit'
 
 const State = Record({
   appName: '',

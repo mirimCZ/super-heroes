@@ -76,6 +76,8 @@
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-isomorphic-tools": "^2.6.4",
+    "webpack-merge": "^1.1.0",
+    "webpack-validator": "^2.2.12",
     "yargs": "^6.3.0"
   },
   "devDependencies": {
