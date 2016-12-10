@@ -1,5 +1,5 @@
 import Promise from 'bluebird'
-import configureStore from '../../redux/_configure/store'
+import configureStore from '../../../app/redux/_configure/store'
 import createInitialState from './createInitialState'
 import { createServerRenderContext } from 'react-router'
 import { renderBody, renderHtml } from './render'

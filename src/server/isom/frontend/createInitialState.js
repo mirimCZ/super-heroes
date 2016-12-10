@@ -1,7 +1,7 @@
 /* @flow */
 import config from '../config'
-import configReducer from '../../redux/config/reducer'
-import intlReducer from '../../redux/intl/reducer'
+import configReducer from '../../../app/redux/config/reducer'
+import intlReducer from '../../../app/redux/intl/reducer'
 import loadMessages from '../intl/loadMessages'
 
 const messages = loadMessages()

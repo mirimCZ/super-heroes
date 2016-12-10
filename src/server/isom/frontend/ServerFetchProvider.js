@@ -7,7 +7,7 @@ class ServerFetchProvider extends React.Component {
   getChildContext() {
     return {
       serverFetchPromises: this.props.promises,
-    };
+    }
   }
   props: {
     // github.com/facebook/flow/issues/1964
@@ -15,8 +15,8 @@ class ServerFetchProvider extends React.Component {
     promises: Array<Promise<any>>,
   }
   render() {
-    return React.Children.only(this.props.children);
+    return React.Children.only(this.props.children)
   }
 }
 
-export default ServerFetchProvider;
+export default ServerFetchProvider

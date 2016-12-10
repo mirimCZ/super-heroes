@@ -16,7 +16,7 @@ const loadMessages = (options) => {
   return fs.readdirSync('./src/l18n')
     .filter(isDictionary)
     .map(fileName => ({
-      descriptors: require(`../../l18n/${fileName}`).default, // eslint-disable-line import/no-dynamic-require, global-require
+      descriptors: require(`../../../l18n/${fileName}`).default, // eslint-disable-line import/no-dynamic-require, global-require
       locale: fileName.split('.')[0],
     }))
     .reduce((previous, { descriptors, locale }) => ({
