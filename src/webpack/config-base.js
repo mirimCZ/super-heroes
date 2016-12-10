@@ -106,8 +106,8 @@ const makeDefaultConfig = (options) => {
           }),
           webpackIsomorphicToolsPlugin,
           new CopyWebpackPlugin([{
-            from: './src/app/assets/favicons/',
-            to: 'favicons',
+            from: './src/app/assets/',
+            to: 'assets',
           }]),
         )
       }

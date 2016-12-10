@@ -1,6 +1,9 @@
 /* @flow weak */
+// TODO: refactor - this is breaking naming standard
 import gutil from 'gulp-util'
 import makeBrowserConfig from './config-browser'
+import makeElectronAppConfig from './config-electron-app'
+import makeElectronConfig from './makeElectronConfig'
 import webpack from 'webpack'
 
 const build = (type, done) => {
@@ -10,6 +13,16 @@ const build = (type, done) => {
   switch (type) {
     case 'browser': {
       config = makeBrowserConfig(options)
+      break
+    }
+
+    case 'electron-app': {
+      config = makeElectronAppConfig(options)
+      break
+    }
+
+    case 'electron': {
+      config = makeElectronConfig(options)
       break
     }
 

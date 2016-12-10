@@ -14,6 +14,7 @@ const constants = Object.freeze({
   BUILD_DIR_BROWSER: path.join(ABSOLUTE_BASE, local.target.browser),
   BUILD_DIR_ELECTRON: path.join(ABSOLUTE_BASE, local.target.electron),
   HOT_RELOAD_PORT: process.env.HOT_RELOAD_PORT || 8080,
+  HOT_RELOAD_PORT_ELECTRON: process.env.HOT_RELOAD_PORT_ELECTRON || 8081,
   NODE_MODULES_DIR: path.join(ABSOLUTE_BASE, 'node_modules'),
   SRC_DIR: path.join(ABSOLUTE_BASE, 'src'),
   TARGET: local.target,

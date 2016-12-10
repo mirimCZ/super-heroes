@@ -4,8 +4,8 @@ import runSequence from 'run-sequence'
 
 gulp.task('build-all', ['env'], done => {
   if (args.production) {
-    runSequence('build-web', done)
+    runSequence('build-app-browser', done)
   } else {
-    runSequence('build-web', 'build-electron', done)
+    runSequence('build-app-browser', 'build-app-electron', 'build-electron', done)
   }
 })
