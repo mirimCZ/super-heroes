@@ -7,8 +7,8 @@
   "scripts": {
     "start": "gulp serve-all",
     "postinstall": "gulp build-all",
-    "electron": "gulp build-electron build-app-electron && electron ./target/electron/main.js",
-    "el": "electron ./target/electron/main.js"
+    "el": "gulp build-electron build-app-electron && electron ./target/electron/main.js",
+    "electron": "electron ./target/electron/main.js"
   },
   "repository": {
     "type": "git",

@@ -1,8 +1,8 @@
 /* @flow */
 import React from 'react'
-import { injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
 import { Page } from '../../components/wrappers'
-import { Title } from '../../components/atoms'
+import { Title, Text, Link } from '../../components/atoms'
 import { PageHeader } from '../../components/molecules'
 import messages from '../../../l18n/pages/not-found'
 
@@ -13,6 +13,11 @@ const NotFoundPage = ({ intl }) => (
       description={intl.formatMessage(messages.p)}
       heading={intl.formatMessage(messages.h1)}
     />
+    <Text>
+      <Link to="/">
+        <FormattedMessage {...messages.continue} />
+      </Link>
+    </Text>
   </Page>
 )
 
