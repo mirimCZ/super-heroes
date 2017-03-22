@@ -12,7 +12,6 @@ import { connect } from 'react-redux'
 
 import NotFoundPage from '../not-found/NotFoundPage'
 import HomePage from '../home/HomePage'
-import RegisterPage from '../register/RegisterPage'
 
 const bootstrap4Metas: any = [
   { charset: 'utf-8' },
@@ -45,7 +44,6 @@ const App = ({ currentLocale }) => (
 
     <Box style={{ flex: 1 }}>
       <Match exactly pattern="/" component={HomePage} />
-      <Match pattern="/registrace" component={RegisterPage} />
       <Miss component={NotFoundPage} />
     </Box>
   </Flex>

@@ -1,9 +1,8 @@
 {
   "public": false,
-  "name": "melior",
+  "name": "super-heroes",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "gulp serve-all",
     "postinstall": "gulp build-all",
@@ -12,14 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/betterhen/melior.git"
+    "url": "git+https://github.com/mirimCZ/super-heroes.git"
   },
   "author": "betterhen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/betterhen/melior/issues"
-  },
-  "homepage": "https://gitlab.com/betterhen/melior#README",
+  "homepage": "https://github.com/mirimCZ/super-heroes",
   "dependencies": {
     "autoprefixer": "^6.5.3",
     "babel-core": "^6.18.2",
