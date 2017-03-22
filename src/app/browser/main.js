@@ -5,7 +5,7 @@ import Root from './app/Root'
 import { fromJSON } from '../../lib/transit'
 import configureStore from '../redux/_configure/store'
 
-// eslint-disable-next-line no-underscore-dangle, no-undef
+// eslint-disable-next-line no-underscore-dangle
 const initialState = fromJSON(window.__INITIAL_STATE__)
 
 const store = configureStore({
@@ -14,7 +14,7 @@ const store = configureStore({
   platformMiddleware: [],
 })
 
-const appElement = document.getElementById('app') // eslint-disable-line no-undef
+const appElement = document.getElementById('app')
 
 ReactDOM.render(<Root store={store} />, appElement)
 

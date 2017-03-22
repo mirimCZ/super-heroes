@@ -1,11 +1,10 @@
 /* @flow */
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Root from '../browser/app/Root'
+import Root from './app/Root'
 import configureStore from '../redux/_configure/store'
 import createInitialState from './createInitialState'
 
-// eslint-disable-next-line no-underscore-dangle, no-undef
 const initialState = createInitialState()
 
 const store = configureStore({
@@ -14,7 +13,7 @@ const store = configureStore({
   platformMiddleware: [],
 })
 
-const appElement = document.getElementById('app') // eslint-disable-line no-undef
+const appElement = document.getElementById('app')
 
 ReactDOM.render(<Root store={store} />, appElement)
 
