@@ -1,7 +1,8 @@
 /* @flow weak */
-import { combineReducers } from 'redux'
 import config from '../config/reducer'
+import heroes from '../heroes/reducer'
 import intl from '../intl/reducer'
+import { combineReducers } from 'redux'
 
 const resetStateOnSignOut = (reducer, initialState) => (state, action) => {
   // Reset app state on sign out, stackoverflow.com/q/35622588/233902.
@@ -21,6 +22,7 @@ const resetStateOnSignOut = (reducer, initialState) => (state, action) => {
 const configureReducer = (initialState: Object) => {
   let reducer = combineReducers({
     config,
+    heroes,
     intl,
   })
 

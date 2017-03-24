@@ -33,7 +33,7 @@ const App = ({ currentLocale }) => (
         ...bootstrap4Metas,
         {
           name: 'description',
-          content: 'Melior Online - MMO RPG game written in JavaScript',
+          content: 'Super Heroes Excercise',
         },
         ...favicon.meta,
       ]}

@@ -1,5 +1,5 @@
 /* @flow */
-import type { State } from '../../lib/types'
+import type { State } from '../../../lib/types'
 import React from 'react'
 import { IntlProvider } from 'react-intl'
 import { connect } from 'react-redux'

@@ -1,1 +1,2 @@
-export { default as QuickPlayTabs } from './quick-play-tabs/QuickPlayTabs'
+export { default as SearchHeader } from './search-header/SearchHeader'
+export { default as HeroList } from './heroes/HeroList'

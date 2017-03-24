@@ -1,8 +1,8 @@
-import { Text, Heading } from '../../atoms'
 import React from 'react'
+import { Text, Heading } from '../../atoms'
 
 const PageHeader = ({ heading, description }) => (
-  <header className="PageHeader">
+  <header>
     <Heading level={1}>
       {heading}
     </Heading>

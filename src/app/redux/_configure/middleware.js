@@ -1,7 +1,8 @@
-import { createEpicMiddleware } from 'redux-observable'
 import configureDeps from './deps'
 import configureEpics from './epics'
 import createLoggerMiddleware from 'redux-logger'
+import promiseMiddleware from 'redux-promise-middleware'
+import { createEpicMiddleware } from 'redux-observable'
 
 const injectMiddleware = deps => ({ dispatch, getState }) => next => action =>
   next(typeof action === 'function'
@@ -16,6 +17,7 @@ const configureMiddleware = (initialState, platformDeps, platformMiddleware) => 
 
   const middleware = [
     injectMiddleware(deps),
+    promiseMiddleware(),
     epicMiddleware,
     ...platformMiddleware,
   ]
