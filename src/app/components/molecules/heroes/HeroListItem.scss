@@ -1,0 +1,28 @@
+.c-hero-list__hero-item {
+  text-align: center;
+  flex-basis: 25%;
+  padding: 1.8em;
+  cursor: pointer;
+
+  animation: fadein 1s;
+  transition: transform .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.c-hero-list__hero-icon {
+  width: 100%;
+  display: block;
+}

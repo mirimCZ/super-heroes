@@ -1,8 +1,9 @@
+import './HomePage.scss'
 import React from 'react'
 import { Map } from 'immutable'
 import { Page } from '../../components/wrappers'
 import { SearchHeader, HeroList } from '../../components/organisms'
-import { Title } from '../../components/atoms'
+import { Title, Spinner } from '../../components/atoms'
 import { connect } from 'react-redux'
 import { fetchHeroList } from '../../redux/heroes/actions'
 import { updateInput, submitForm } from '../../redux/search/actions'
@@ -10,7 +11,7 @@ import { updateInput, submitForm } from '../../redux/search/actions'
 class HomePage extends React.Component {
   componentDidMount() {
     this.props.fetchHeroList(new Map({
-      limit: 30,
+      limit: 32,
     }))
   }
 
@@ -18,7 +19,7 @@ class HomePage extends React.Component {
     const { updateInput, submitForm, heroes } = this.props
 
     return (
-      <Page>
+      <Page className="c-heroes-page">
         <Title message="Super Heroes Exercise | Homepage" />
 
         <SearchHeader
@@ -26,7 +27,11 @@ class HomePage extends React.Component {
           onSearchChange={updateInput}
           onSearchSubmit={submitForm}
         />
-
+        {heroes.get('isSearchPeding') &&
+          <div className="c-heroes-page__spinner">
+            <Spinner />
+          </div>
+        }
         <HeroList
           heroes={heroes.get('all')}
         />

@@ -1,0 +1,9 @@
+@import '../../../../../node_modules/spinkit/scss/spinners/8-circle.scss';
+.sk-circle {
+  display: inline-block;
+  margin: 0;
+}
+
+.sk-circle .sk-child:before  {
+  background-color: white;
+}
