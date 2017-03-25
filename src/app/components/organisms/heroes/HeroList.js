@@ -12,6 +12,10 @@ const HeroList = ({ heroes }) => (
         blockClass="c-hero-list"
       />
     ))}
+
+    {heroes.size === 0 &&
+      <p className="c-hero-list__message">No super heroes found :(</p>
+    }
   </Flex>
 )
 

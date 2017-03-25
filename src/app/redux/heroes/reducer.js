@@ -1,11 +1,17 @@
 /* @flow weak */
 import { Record } from '../../../lib/transit'
-import { Map } from 'immutable'
+import { OrderedMap, Map } from 'immutable'
 import * as actions from './actions'
 
 const State = Record({
-  all: Map(),
+  map: Map(),
   isSearchPeding: false,
+  filter: Map({
+    limit: 32,
+    offset: 0,
+    nameStartsWith: '',
+  }),
+  total: null,
 }, 'heroes')
 
 const heroesReducer = (state = new State(), action) => {
@@ -14,10 +20,12 @@ const heroesReducer = (state = new State(), action) => {
       const response = action.payload
       const heroes = response.data.results.reduce((result, hero) => (
         result.set(hero.id, Map(hero))
-      ), Map())
+      ), OrderedMap())
+
       return state
-        .set('all', heroes)
+        .set('map', heroes)
         .set('isSearchPeding', false)
+        .set('total', response.data.total)
     }
 
     case `${actions.FETCH_HERO_LIST}_PENDING`: {
@@ -26,6 +34,10 @@ const heroesReducer = (state = new State(), action) => {
 
     case `${actions.FETCH_HERO_LIST}_REJECTED`: {
       return state.set('isSearchPeding', false)
+    }
+
+    case actions.UPDATE_SEARCH_INPUT: {
+      return state.setIn(['filter', 'nameStartsWith'], action.payload.value)
     }
 
     default:

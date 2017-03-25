@@ -13,6 +13,9 @@ const HeroListItem = ({ hero, blockClass, ...props }) => (
       title={hero.get('name')}
       className={`${blockClass}__hero-icon`}
     />
+    <span className={`${blockClass}__hero-description`}>
+      <span className={`${blockClass}__hero-name`}>{hero.get('name')}</span>
+    </span>
   </Box>
 )
 

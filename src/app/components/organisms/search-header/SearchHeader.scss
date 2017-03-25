@@ -1,9 +1,10 @@
 $primaryTextColor: #FFF;
+$secondaryTextColor: #9e9e9e;
 
 .c-search-header__input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid $secondaryTextColor;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -13,11 +14,15 @@ $primaryTextColor: #FFF;
   box-shadow: none;
   box-sizing: content-box;
   transition: all .3s;
-  color: $primaryTextColor;
+  color: $secondaryTextColor;
 
   // Focused input style
   &:focus:not([readonly]) {
     border-bottom: 1px solid $primaryTextColor;
     box-shadow: 0 1px 0 0 $primaryTextColor;
+  }
+
+  &:focus {
+    color: $primaryTextColor;
   }
 }
