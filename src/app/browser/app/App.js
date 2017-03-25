@@ -10,8 +10,9 @@ import { Flex, Box } from '../../components/wrappers'
 import { Match, Miss } from 'react-router'
 import { connect } from 'react-redux'
 
-import NotFoundPage from '../not-found/NotFoundPage'
+import DetailPage from '../heroes/DetailPage'
 import HomePage from '../home/HomePage'
+import NotFoundPage from '../not-found/NotFoundPage'
 
 const bootstrap4Metas: any = [
   { charset: 'utf-8' },
@@ -44,6 +45,7 @@ const App = ({ currentLocale }) => (
 
     <Box style={{ flex: 1 }}>
       <Match exactly pattern="/" component={HomePage} />
+      <Match pattern="/detail/:id" component={DetailPage} />
       <Miss component={NotFoundPage} />
     </Box>
   </Flex>

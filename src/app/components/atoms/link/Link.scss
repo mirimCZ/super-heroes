@@ -1,14 +1,11 @@
 $primaryLinkColor: #FFF;
 $hoverLinkColor: #D2D2D2;
 
-.Link {
+.c-hero-list__link {
   color: $primaryLinkColor;
   text-decoration: none;
-  border-bottom: 1px solid #FFFFFF;
-  padding-bottom: 3px;
 }
 
-.Link:hover {
+.c-hero-list__link:hover {
   color: $hoverLinkColor;
-  border-bottom-color: #D2D2D2;
 }

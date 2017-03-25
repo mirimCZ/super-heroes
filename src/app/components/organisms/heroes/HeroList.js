@@ -2,15 +2,21 @@ import './HeroList.scss'
 import React from 'react'
 import { Flex } from '../../wrappers'
 import { HeroListItem } from '../../molecules'
+import { Link } from '../../atoms'
 
 const HeroList = ({ heroes }) => (
   <Flex className="c-hero-list" wrap>
     {heroes.map(hero => (
-      <HeroListItem
-        key={hero.get('id')}
-        hero={hero}
+      <Link
         blockClass="c-hero-list"
-      />
+        to={`/detail/${hero.get('id')}`}
+      >
+        <HeroListItem
+          key={hero.get('id')}
+          hero={hero}
+          blockClass="c-hero-list"
+        />
+      </Link>
     ))}
 
     {heroes.size === 0 &&
