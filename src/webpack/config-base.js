@@ -44,6 +44,9 @@ const makeDefaultConfig = (options) => {
           loader: 'url-loader?limit=1',
           test: /favicon\.ico$/,
         }, {
+          loader: 'json-loader',
+          test: /\.json$/,
+        }, {
           loader: 'url-loader?limit=100000',
           test: /\.(ttf|eot|woff|woff2)(\?.*)?$/,
         }, {
