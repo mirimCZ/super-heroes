@@ -15,7 +15,7 @@ class HomePage extends React.Component {
     const { updateSearchInput, fetchHeroList, heroes } = this.props
 
     return (
-      <Page className="c-heroes-page">
+      <Page className="p-homepage">
         <Title message="Super Heroes Exercise | Homepage" />
 
         <SearchHeader

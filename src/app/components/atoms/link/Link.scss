@@ -1,11 +1,24 @@
 $primaryLinkColor: #FFF;
 $hoverLinkColor: #D2D2D2;
 
+.p-heroes-detail__link,
 .c-hero-list__link {
   color: $primaryLinkColor;
   text-decoration: none;
+
+  &:hover {
+    color: $hoverLinkColor;
+  }
 }
 
-.c-hero-list__link:hover {
-  color: $hoverLinkColor;
+.c-heroes-detail__link {
+  color: $primaryLinkColor;
+  text-decoration: none;
+  border-bottom: 1px solid $primaryLinkColor;
+  padding-bottom: 3px;
+
+  &:hover {
+    color: $hoverLinkColor;
+    border-bottom-color: $hoverLinkColor;
+  }
 }

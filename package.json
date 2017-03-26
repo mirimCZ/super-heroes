@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "start": "gulp serve-all",
-    "postinstall": "gulp build-all",
+    "postinstall": "gulp build-app-browser",
     "el": "gulp build-electron build-app-electron && electron ./target/electron/main.js",
     "electron": "electron ./target/electron/main.js"
   },

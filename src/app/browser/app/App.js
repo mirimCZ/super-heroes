@@ -7,12 +7,11 @@ import favicon from '../../components/app/favicon'
 import start from '../../components/app/start'
 import type { State } from '../../../lib/types'
 import { Flex, Box } from '../../components/wrappers'
-import { Match, Miss } from 'react-router'
+import { Match } from 'react-router'
 import { connect } from 'react-redux'
 
 import DetailPage from '../heroes/DetailPage'
 import HomePage from '../home/HomePage'
-import NotFoundPage from '../not-found/NotFoundPage'
 
 const bootstrap4Metas: any = [
   { charset: 'utf-8' },
@@ -45,8 +44,7 @@ const App = ({ currentLocale }) => (
 
     <Box style={{ flex: 1 }}>
       <Match exactly pattern="/" component={HomePage} />
-      <Match pattern="/detail/:id" component={DetailPage} />
-      <Miss component={NotFoundPage} />
+      <Match exactly pattern="/detail/:id" component={DetailPage} />
     </Box>
   </Flex>
 )

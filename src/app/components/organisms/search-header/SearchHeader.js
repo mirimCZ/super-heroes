@@ -21,6 +21,7 @@ const SearchHeader = ({ heading, onSearchChange, onSearchSubmit, filter }) => (
           className="c-search-header__input"
           placeholder="Search for super hero"
           type="search"
+          value={filter.get('nameStartsWith')}
         />
       </form>
     </Box>

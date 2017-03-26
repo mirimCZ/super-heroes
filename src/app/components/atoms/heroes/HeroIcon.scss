@@ -1,0 +1,11 @@
+$shadow: 6px 3px 22px 0px rgba(20, 20, 20, 0.95);
+
+.c-hero-list__hero-icon {
+  width: 100%;
+  display: block;
+  box-shadow: $shadow;
+}
+
+.c-heroes-detail__hero-icon {
+  box-shadow: $shadow;
+}
