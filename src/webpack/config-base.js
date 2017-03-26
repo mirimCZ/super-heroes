@@ -62,14 +62,7 @@ const makeDefaultConfig = (options) => {
                 polyfill: false,
                 regenerator: false,
               }],
-            ],
-            env: {
-              production: {
-                plugins: [
-                  'transform-react-constant-elements',
-                ],
-              },
-            },
+            ]
           },
         },
         ...stylesLoaders,
